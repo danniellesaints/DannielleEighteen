@@ -147,6 +147,8 @@
             font-size: 0.9rem; letter-spacing: 1px;
         }
 
+        input::placeholder { color: rgba(255,255,255,0.4); }
+
         .confirm-btn {
             background: var(--gold-luxe);
             color: white; border: none; padding: 22px; width: 100%;
@@ -155,6 +157,8 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
             transition: 0.4s ease;
         }
+
+        .confirm-btn:hover { background: #b08d4a; transform: translateY(-3px); }
 
         @media (max-width: 600px) {
             .radiant-line { max-width: 60px; }
@@ -188,7 +192,7 @@
         <p style="color: var(--soft-taupe); font-size: 0.9rem; margin-top: 10px; letter-spacing: 1px;">44 Atis St. Aurora Subdivision, Angono, Rizal</p>
         <div class="map-container">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.914902345524!2d121.1555555!3d14.5333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c6630f9a53f7%3A0x7d0a0b0b0b0b0b0b!2s44%20Atis%20St%2C%20Angono%2C%20Rizal!5e0!3m2!1sen!2sph!4v1710000000000" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.031575971485!2d121.1487313758451!3d14.540209278546522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c77f0f6c2f91%3A0x6b04b4c738e82d8d!2s44%20Atis%2C%20Angono%2C%201930%20Rizal!5e0!3m2!1sen!2sph!4v1709560000000!5m2!1sen!2sph" 
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
         </div>
@@ -213,13 +217,14 @@
             <h2>RSVP</h2>
             <p style="margin-top: 15px; font-size: 0.85rem; letter-spacing: 2px; color: rgba(255,255,255,0.45);">Kindly respond by April 20, 2026.</p>
             <div class="rsvp-form-grid">
-                <form action="#" method="POST">
-                    <input type="text" name="guest_name" placeholder="GUEST FULL NAME" required>
-                    <select name="attending" required>
+                <form action="https://formspree.io/f/xnjorzvy" method="POST">
+                    <input type="text" name="Guest Name" placeholder="GUEST FULL NAME" required>
+                    <select name="Attendance Status" required>
                         <option value="" disabled selected>ATTENDANCE</option>
-                        <option value="Yes">Delightfully Accepts</option>
-                        <option value="No">Regretfully Declines</option>
+                        <option value="Accepted">Delightfully Accepts</option>
+                        <option value="Declined">Regretfully Declines</option>
                     </select>
+                    <input type="hidden" name="_subject" value="RSVP: Dannielle's 18th Radiance Night">
                     <button type="submit" class="confirm-btn">CONFIRM ATTENDANCE</button>
                 </form>
             </div>
