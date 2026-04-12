@@ -5,37 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dannielle's 18th | A Night of Radiance</title>
     <style>
-        /* Typography */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Meie+Script&family=Montserrat:wght@200;300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Monsieur+La+Doulaise&family=Montserrat:wght@200;300;400;600&display=swap');
 
         :root {
-            --bg-dark: #1A1715;     /* Rich, deep espresso-black */
-            --gold: #D4AF37;        /* Metallic champagne gold */
-            --text-main: #FDFBFA;   /* Off-white linen text */
-            --text-muted: #A68E74;  /* Muted bronze-taupe */
-            --glass: rgba(255, 255, 255, 0.03);
+            --nude-bg: #FAF5F2;
+            /* LUXE CHAMPAGNE GOLD - Sophisticated, not "yellow" */
+            --gold-luxe: #C5A059; 
+            --deep-espresso: #2D241E;
+            --soft-taupe: #A68E74;
+            
+            /* Dress Code Palette */
+            --p1: #F4E4E1; --p2: #E8D5CC; --p3: #DDC3B6; --p4: #C2A69A;
         }
 
         body {
             margin: 0; padding: 0;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--nude-bg);
+            color: var(--deep-espresso);
             font-family: 'Montserrat', sans-serif;
             text-align: center;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* --- DECORATIVE FLOWERS --- */
-        .floral-accent {
-            width: 80px;
-            height: auto;
-            opacity: 0.6;
-            margin: 10px auto;
-            filter: sepia(1) saturate(5) hue-rotate(5deg); /* Turns it gold */
-        }
-
-        /* --- HEADER --- */
+        /* --- HEADER SECTION --- */
         header {
             min-height: 100vh;
             display: flex;
@@ -43,171 +35,220 @@
             justify-content: center;
             align-items: center;
             padding: 40px 20px;
-            box-sizing: border-box;
         }
 
-        .pre-title {
+        .invite-text {
             letter-spacing: 6px;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 0.75rem;
+            color: var(--soft-taupe);
             margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        .main-name {
-            font-family: 'Meie Script', cursive;
-            font-size: clamp(3.8rem, 20vw, 7.5rem);
-            line-height: 1.1;
+        .name-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: -15px 0;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .radiant-line {
+            flex: 1;
+            max-width: 120px;
+            height: 1px;
+            background: linear-gradient(to var(--direction, right), transparent, var(--gold-luxe));
+            box-shadow: 0 0 8px rgba(197, 160, 89, 0.3);
+        }
+
+        h1.cursive-name {
+            font-family: 'Monsieur La Doulaise', cursive;
+            font-size: clamp(4.5rem, 20vw, 8rem);
+            color: var(--deep-espresso);
             margin: 0;
             font-weight: 400;
-            color: var(--gold);
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.05));
         }
 
-        .sub-title {
+        .title-18th {
             font-family: 'Cinzel', serif;
             letter-spacing: 12px;
-            font-size: 0.85rem;
-            color: var(--text-main);
-            margin-top: 10px;
+            font-size: 1.1rem;
+            color: var(--gold-luxe);
+            margin-top: -20px;
         }
 
-        /* --- COUNTDOWN (Lowered for spacing) --- */
-        .timer-wrap {
+        /* --- COUNTDOWN --- */
+        .timer-container {
             display: flex;
-            gap: 20px;
-            margin-top: 80px; /* Increased spacing as requested */
+            gap: 15px;
+            margin-top: 50px;
+            justify-content: center;
         }
 
-        .timer-unit { display: flex; flex-direction: column; align-items: center; }
-
-        .timer-val {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
-            color: var(--gold);
-            font-weight: 500;
+        .time-box {
+            background: white;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 15px;
+            width: 75px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
         }
 
-        .timer-label {
-            font-size: 0.55rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
+        .time-num {
+            display: block;
+            font-family: 'Cinzel';
+            font-size: 1.7rem;
+            color: var(--gold-luxe);
+            font-weight: 700;
         }
 
-        /* --- VENUE --- */
-        .section-venue { padding: 100px 0 0 0; background: #12100E; }
-        .venue-name { font-family: 'Cinzel', serif; letter-spacing: 6px; font-size: 1.3rem; color: var(--gold); }
-        .venue-address { font-size: 0.75rem; color: var(--text-muted); margin: 10px auto 40px; max-width: 280px; }
-
-        .map-frame {
+        /* --- MAP SECTION --- */
+        .map-section { padding: 100px 20px; background: white; }
+        .venue-label { font-family: 'Cinzel'; letter-spacing: 6px; font-size: 1.6rem; color: var(--gold-luxe); }
+        
+        .map-container {
             width: 100%;
-            height: 400px;
-            filter: invert(90%) hue-rotate(180deg) brightness(0.9); /* High-end dark map style */
-            border: none;
-            opacity: 0.8;
+            max-width: 900px; 
+            height: 500px; 
+            margin: 40px auto;
+            border-radius: 24px; 
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            border: 1px solid #f5f5f5;
         }
 
         /* --- DRESS CODE --- */
-        .section-dress { padding: 100px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .swatch-box { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
-        .swatch { width: 45px; height: 45px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.1); }
-        .dress-note { font-size: 0.85rem; font-style: italic; color: var(--text-muted); max-width: 320px; margin: 0 auto; }
-        .strictly { margin-top: 25px; font-size: 0.7rem; letter-spacing: 3px; font-weight: 600; color: var(--gold); }
+        .dress-code { padding: 120px 20px; }
+        .swatch-group { display: flex; justify-content: center; gap: 20px; margin: 45px 0; flex-wrap: wrap; }
+        .swatch { 
+            width: 75px; height: 75px; border-radius: 50%; 
+            border: 5px solid white; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+        }
 
-        /* --- RSVP --- */
-        .section-rsvp { padding: 100px 25px; background: #12100E; }
-        .rsvp-card { max-width: 450px; margin: 0 auto; }
-        .rsvp-card h2 { font-family: 'Cinzel', serif; letter-spacing: 10px; font-size: 2.2rem; color: var(--gold); }
+        /* --- THE PREMIUM CURVED RSVP BOX --- */
+        .rsvp-outer {
+            padding: 40px 20px 120px;
+        }
 
+        .rsvp-inner-box {
+            max-width: 550px;
+            margin: 0 auto;
+            background: var(--deep-espresso);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 100px; /* High-end curve */
+            box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .rsvp-inner-box h2 { font-family: 'Cinzel'; letter-spacing: 12px; margin: 0; font-size: 2.4rem; }
+        
+        .rsvp-form-grid { margin-top: 50px; }
+        
         input, select {
             width: 100%; background: transparent; border: none;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding: 15px 0; margin-bottom: 30px;
-            color: var(--text-main); font-family: 'Montserrat'; font-size: 0.95rem; outline: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 20px 0; margin-bottom: 30px; color: white;
+            font-family: 'Montserrat'; outline: none; border-radius: 0;
+            font-size: 0.9rem; letter-spacing: 1px;
         }
-        input:focus { border-bottom-color: var(--gold); }
 
-        .btn-submit {
-            background: var(--gold); color: #1A1715; border: none;
-            width: 100%; padding: 22px; font-family: 'Cinzel', serif;
-            letter-spacing: 5px; font-size: 1rem; font-weight: 700;
-            cursor: pointer; margin-top: 20px; transition: 0.3s;
+        .confirm-btn {
+            background: var(--gold-luxe);
+            color: white; border: none; padding: 22px; width: 100%;
+            font-family: 'Cinzel'; letter-spacing: 6px; cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: 0.4s ease;
         }
-        .btn-submit:hover { opacity: 0.8; }
+        .confirm-btn:hover { background: #b08d4a; transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 
-        @media (max-width: 480px) {
-            .timer-wrap { gap: 15px; margin-top: 60px; }
-            .main-name { font-size: 4.2rem; }
-            .map-frame { height: 320px; }
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 600px) {
+            .radiant-line { max-width: 60px; }
+            .rsvp-inner-box { padding: 60px 25px; border-radius: 60px; }
+            .map-container { height: 350px; border-radius: 16px; }
+            .time-box { width: 65px; padding: 10px; }
+            .time-num { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img class="floral-accent" src="https://img.icons8.com/ios/100/flower-bouquet.png" alt="floral-top">
+        <p class="invite-text">You are cordially invited to celebrate</p>
         
-        <span class="pre-title">A Night of Radiance</span>
-        <h1 class="main-name">Dannielle's</h1>
-        <div class="sub-title">18th Birthday Celebration</div>
+        <div class="name-container">
+            <div class="radiant-line" style="--direction: right"></div>
+            <h1 class="cursive-name">Dannielle's</h1>
+            <div class="radiant-line" style="--direction: left"></div>
+        </div>
+        
+        <p class="title-18th">18th Birthday Celebration</p>
 
-        <img class="floral-accent" src="https://img.icons8.com/ios/100/spa-flower.png" alt="floral-bottom">
-
-        <div class="timer-wrap">
-            <div class="timer-unit"><span class="timer-val" id="days">00</span><span class="timer-label">Days</span></div>
-            <div class="timer-unit"><span class="timer-val" id="hours">00</span><span class="timer-label">Hrs</span></div>
-            <div class="timer-unit"><span class="timer-val" id="mins">00</span><span class="timer-label">Min</span></div>
-            <div class="timer-unit"><span class="timer-val" id="secs">00</span><span class="timer-label">Sec</span></div>
+        <div class="timer-container" id="timer">
+            <div class="time-box"><span class="time-num" id="days">00</span><span style="font-size:0.5rem; letter-spacing:2px; text-transform:uppercase; color: var(--soft-taupe);">Days</span></div>
+            <div class="time-box"><span class="time-num" id="hours">00</span><span style="font-size:0.5rem; letter-spacing:2px; text-transform:uppercase; color: var(--soft-taupe);">Hours</span></div>
+            <div class="time-box"><span class="time-num" id="mins">00</span><span style="font-size:0.5rem; letter-spacing:2px; text-transform:uppercase; color: var(--soft-taupe);">Mins</span></div>
+            <div class="time-box"><span class="time-num" id="secs">00</span><span style="font-size:0.5rem; letter-spacing:2px; text-transform:uppercase; color: var(--soft-taupe);">Secs</span></div>
         </div>
 
-        <div style="margin-top: 60px; font-family: 'Cinzel'; letter-spacing: 6px; font-weight: 500; font-size: 1.1rem; color: var(--gold);">
-            MAY 09 | 2026
-        </div>
+        <p style="margin-top: 50px; letter-spacing: 12px; font-family: 'Cinzel'; font-size: 1.2rem; color: var(--gold-luxe);">MAY 09 . 2026</p>
     </header>
 
-    <section class="section-venue">
-        <div class="venue-name">PARINI PRIVATE RESORT</div>
-        <div class="venue-address">44 Atis Street Aurora Subdivision, Angono, Rizal</div>
+    <section class="map-section">
+        <div class="venue-label">PARINI PRIVATE RESORT</div>
+        <p style="color: var(--soft-taupe); font-size: 0.9rem; margin-top: 10px; letter-spacing: 1px;">44 Atis St. Aurora Subdivision, Angono, Rizal</p>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.115854832541!2d121.15392827583626!3d14.535359478635742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c77c68a35639%3A0xe48d6f9a0664448e!2sParini%20Private%20Resort!5e0!3m2!1sen!2sph!4v1714000000000" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <section class="dress-code">
+        <h3 style="font-family: 'Cinzel'; letter-spacing: 10px; font-weight: 400;">DRESS CODE</h3>
+        <p style="font-size: 0.8rem; letter-spacing: 4px; color: var(--soft-taupe);">FORMAL / SEMI-FORMAL</p>
         
-        <iframe 
-            class="map-frame"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.000000000000!2d121.151!3d14.526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c77c687e8395%3A0x35002a24c8789886!2sParini%20Private%20Resort!5e0!3m2!1sen!2sph!4v1712000000000!5m2!1sen!2sph7" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </section>
-
-    <section class="section-dress">
-        <div class="pre-title" style="margin-bottom: 10px;">The Aesthetic</div>
-        <div class="venue-name" style="font-size: 1rem;">FORMAL & SEMI-FORMAL</div>
-        <div class="swatch-box">
-            <div class="swatch" style="background: #F4E4E1;"></div>
-            <div class="swatch" style="background: #E8D5CC;"></div>
-            <div class="swatch" style="background: #DDC3B6;"></div>
-            <div class="swatch" style="background: #C2A69A;"></div>
+        <div class="swatch-group">
+            <div class="swatch" style="background: var(--p1);"></div>
+            <div class="swatch" style="background: var(--p2);"></div>
+            <div class="swatch" style="background: var(--p3);"></div>
+            <div class="swatch" style="background: var(--p4);"></div>
         </div>
-        <div class="dress-note">"Your presence is the greatest gift. Please join us in your finest attire to match our theme."</div>
-        <div class="strictly">STRICTLY NO: DENIM, SANDOS, OR SHORTS</div>
+
+        <p style="font-style: italic; font-weight: 300; max-width: 500px; margin: 0 auto; line-height: 2.4; color: var(--deep-espresso); font-size: 1rem;">
+            "Wear your best dress and celebrate with us in elegance."<br>
+            <span style="font-weight: 600; font-style: normal; font-size: 0.85rem; letter-spacing: 2px; color: var(--gold-luxe); display: block; margin-top: 20px;">
+                Strictly No: Denim, Sandos, or Shorts.
+            </span>
+        </p>
     </section>
 
-    <section class="section-rsvp">
-        <div class="rsvp-card">
+    <div class="rsvp-outer">
+        <div class="rsvp-inner-box">
             <h2>RSVP</h2>
-            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 40px; letter-spacing: 2px;">BY APRIL 20, 2026</p>
-            
-            <form action="https://formspree.io/f/mbdqroed" method="POST">
-                <input type="text" name="name" placeholder="GUEST FULL NAME" required>
-                <select name="attendance" required>
-                    <option value="" disabled selected>WILL YOU ATTEND?</option>
-                    <option value="Accepted">Delightfully Accepts</option>
-                    <option value="Declined">Regretfully Declines</option>
-                </select>
-                <input type="hidden" name="_subject" value="RSVP: Dannielle's 18th Celebration">
-                <button type="submit" class="btn-submit">CONFIRM ATTENDANCE</button>
-            </form>
+            <p style="margin-top: 15px; font-size: 0.85rem; letter-spacing: 2px; color: rgba(255,255,255,0.45);">
+                Kindly respond by April 20, 2026.
+            </p>
+            <div class="rsvp-form-grid">
+                <form action="#" method="POST">
+                    <input type="text" name="guest_name" placeholder="GUEST FULL NAME" required>
+                    <select name="attending" required>
+                        <option value="" disabled selected>ATTENDANCE</option>
+                        <option value="Yes">Delightfully Accepts</option>
+                        <option value="No">Regretfully Declines</option>
+                    </select>
+                    <button type="submit" class="confirm-btn">CONFIRM ATTENDANCE</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
 
     <script>
         const targetDate = new Date("May 9, 2026 18:00:00").getTime();
