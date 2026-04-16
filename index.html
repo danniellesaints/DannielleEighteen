@@ -25,55 +25,52 @@
             scroll-behavior: smooth;
         }
 
-        /* --- HERO: JUST THE NAME --- */
-        .hero {
+        /* --- SECTION 1: THE HEADING ONLY --- */
+        /* Forces the heading to take up the entire phone screen alone */
+        .hero-screen {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
         }
 
-        .hero h1 {
+        .hero-screen h1 {
             font-family: 'Monsieur La Doulaise', cursive;
             font-size: clamp(4.5rem, 25vw, 10rem);
             color: var(--gold-luxe);
             margin: 0;
             font-weight: 400;
-            line-height: 0.8;
         }
 
-        .hero p {
+        .hero-screen p {
             font-family: 'Cinzel', serif;
             letter-spacing: 12px;
-            font-size: 0.8rem;
-            margin-top: 20px;
+            font-size: 0.75rem;
+            margin-top: 10px;
             text-transform: uppercase;
-            color: var(--deep-espresso);
         }
 
-        /* --- THE COUNTDOWN: PUSHED AWAY --- */
-        .spacing-block {
-            padding: 150px 20px; /* High whitespace to separate sections */
+        /* --- SECTION 2: THE COUNTDOWN (Hidden until you scroll) --- */
+        .details-screen {
+            padding: 100px 20px;
+            background-color: white;
         }
 
         .timer-grid {
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
-        .time-box {
-            display: flex;
-            flex-direction: column;
-        }
+        .time-box { display: flex; flex-direction: column; }
 
         .time-num {
             font-family: 'Cinzel', serif;
             font-size: 1.8rem;
             color: var(--gold-luxe);
+            line-height: 1;
         }
 
         .time-label {
@@ -81,67 +78,67 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--soft-taupe);
+            margin-top: 5px;
         }
 
-        /* --- THE MAP --- */
-        .venue-section { padding: 100px 0 0 0; background: white; }
-        .venue-title { font-family: 'Cinzel', serif; letter-spacing: 8px; font-size: 1.2rem; }
-        .address { font-size: 0.75rem; color: var(--soft-taupe); margin: 10px 0 40px; letter-spacing: 1px; }
-        
+        /* --- MAP SECTION --- */
+        .venue-section { padding: 80px 0 0 0; background: var(--nude-bg); }
+        .venue-title { font-family: 'Cinzel', serif; letter-spacing: 8px; font-size: 1.2rem; margin-bottom: 5px; }
+        .address { font-size: 0.8rem; color: var(--soft-taupe); margin-bottom: 40px; }
+
         .map-frame {
             width: 100%;
-            height: 400px;
+            height: 450px;
             border: none;
-            filter: grayscale(0.3) contrast(1.1);
+            /* Makes map look more artistic/less "cheap" */
+            filter: grayscale(0.2) contrast(1.1);
         }
 
         /* --- DRESS CODE --- */
-        .dress-code { padding: 120px 20px; }
-        .swatch-row { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
-        .swatch { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.05); }
+        .dress-code { padding: 100px 20px; background: white; }
+        .swatch-row { display: flex; justify-content: center; gap: 12px; margin: 30px 0; }
+        .swatch { width: 35px; height: 35px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.05); }
 
         /* --- RSVP --- */
         .rsvp-box {
             background: var(--deep-espresso);
             color: white;
             padding: 80px 30px;
-            max-width: 400px;
-            margin: 0 auto 100px;
-            border-radius: 4px;
+            max-width: 450px;
+            margin: 0 auto;
         }
 
-        .rsvp-box h2 { font-family: 'Cinzel'; letter-spacing: 10px; font-size: 1.5rem; }
+        .rsvp-box h2 { font-family: 'Cinzel'; letter-spacing: 10px; font-size: 1.8rem; color: var(--gold-luxe); }
 
         input, select {
             width: 100%; background: transparent; border: none;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             padding: 15px 0; margin-bottom: 30px; color: white;
-            font-family: 'Montserrat'; outline: none; font-size: 0.8rem;
+            font-family: 'Montserrat'; outline: none; font-size: 0.85rem;
         }
 
         .btn {
             background: var(--gold-luxe); color: white; border: none;
             padding: 20px; width: 100%; font-family: 'Cinzel';
-            letter-spacing: 4px; cursor: pointer; text-transform: uppercase;
+            letter-spacing: 5px; cursor: pointer; text-transform: uppercase; font-weight: 700;
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 5rem; }
-            .hero p { letter-spacing: 6px; font-size: 0.7rem; }
-            .timer-grid { gap: 12px; }
-            .time-num { font-size: 1.4rem; }
+            .hero-screen h1 { font-size: 5.5rem; }
+            .hero-screen p { letter-spacing: 6px; font-size: 0.7rem; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <section class="hero-screen">
         <h1>Dannielle's</h1>
-        <p>Eighteenth Birthday</p>
+        <p>18th Birthday</p>
+        <div style="margin-top: 40px; font-size: 0.6rem; letter-spacing: 3px; color: var(--soft-taupe); text-transform: uppercase; opacity: 0.6;">Scroll</div>
     </section>
 
-    <section class="spacing-block">
-        <div style="font-family: 'Cinzel'; letter-spacing: 10px; color: var(--gold-luxe);">09 . MAY . 2026</div>
+    <section class="details-screen">
+        <div style="font-family: 'Cinzel'; letter-spacing: 10px; font-size: 1.3rem; color: var(--gold-luxe);">09 . MAY . 2026</div>
         
         <div class="timer-grid">
             <div class="time-box"><span class="time-num" id="days">00</span><span class="time-label">Days</span></div>
@@ -154,26 +151,27 @@
     <section class="venue-section">
         <div class="venue-title">PARINI PRIVATE RESORT</div>
         <div class="address">44 Atis St. Aurora Subdivision, Angono, Rizal</div>
+        
         <iframe class="map-frame" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.062438510842!2d121.1444158!3d14.5385149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c65f97371f6d%3A0x6a94827526978502!2s44%20Atis%2C%20Angono%2C%201930%20Rizal!5e0!3m2!1sen!2sph!4v1713264000000!5m2!1sen!2sph" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.968641158548!2d121.14415847493633!3d14.543826085936734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c64f77d54e47%3A0x6b4f74f767858d4a!2s44%20Atis%20St%2C%20Angono%2C%201930%20Rizal!5e0!3m2!1sen!2sph!4v1700000000000" 
             allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <section class="dress-code">
-        <div style="font-family: 'Cinzel'; letter-spacing: 6px; font-size: 0.9rem;">DRESS CODE</div>
+        <div style="font-family: 'Cinzel'; letter-spacing: 8px; font-size: 1.1rem;">DRESS CODE</div>
         <div class="swatch-row">
             <div class="swatch" style="background: var(--p1);"></div>
             <div class="swatch" style="background: var(--p2);"></div>
             <div class="swatch" style="background: var(--p3);"></div>
             <div class="swatch" style="background: var(--p4);"></div>
         </div>
-        <div style="font-size: 0.7rem; letter-spacing: 2px; color: var(--soft-taupe);">FORMAL / SEMI-FORMAL</div>
-        <div style="font-size: 0.6rem; color: var(--gold-luxe); margin-top: 15px; font-weight: 600;">STRICTLY NO DENIM OR SHORTS</div>
+        <div style="font-size: 0.75rem; letter-spacing: 3px; color: var(--soft-taupe);">FORMAL / SEMI-FORMAL</div>
+        <div style="font-size: 0.65rem; color: var(--gold-luxe); margin-top: 20px; font-weight: 600; letter-spacing: 2px;">STRICTLY NO DENIM OR SHORTS</div>
     </section>
 
     <div class="rsvp-box">
         <h2>RSVP</h2>
-        <p style="font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 40px; color: var(--soft-taupe);">KINDLY RESPOND BY APRIL 20</p>
+        <p style="font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 40px; color: var(--soft-taupe);">RESPOND BY APRIL 20</p>
         <form action="https://formspree.io/f/mbdqroed" method="POST">
             <input type="text" name="name" placeholder="FULL NAME" required>
             <select name="attendance" required>
@@ -181,7 +179,7 @@
                 <option value="Accepted">Will Attend</option>
                 <option value="Declined">Will Not Attend</option>
             </select>
-            <button type="submit" class="btn">Confirm</button>
+            <button type="submit" class="btn">Confirm Presence</button>
         </form>
     </div>
 
